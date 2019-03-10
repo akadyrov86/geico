@@ -7,3 +7,10 @@
       package: 
         name: httpd
         state: latest
+      notify: APACHE
+
+  handlers:
+    - name: APACHE
+      systemd:
+        name: httpd
+        state: restarted
